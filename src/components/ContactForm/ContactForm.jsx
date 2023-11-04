@@ -13,8 +13,6 @@ class ContactForm extends Component {
     const number = form.elements.number.value;
     const id = nanoid();
 
-    console.log({ id, name, number });
-
     this.props.onSubmit({ id, name, number });
 
     e.target.reset();

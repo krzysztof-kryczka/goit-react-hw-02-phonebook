@@ -14,14 +14,23 @@ export class App extends Component {
       { id: nanoid(), name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
-    name: '',
-    number: '',
   };
 
+	checkContact = (newContact) => {
+		const { contacts } = this.state;
+		const isExists = contacts.some((contact) => contact.name.toLowerCase().trim() === newContact.name.toLowerCase().trim());
+		return isExists;
+	};
+
   addContact = newContact => {
-    const { contacts } = this.state;
-    contacts.push(newContact);
-    this.setState({ contacts: contacts });
+    const check = this.checkContact(newContact);
+		if (!check) {
+			const { contacts } = this.state;
+			contacts.push(newContact);
+			this.setState({ contacts: contacts });
+		} else {
+			alert(`${newContact.name} is already in contacts.`);
+		}
   };
 
   changeFilterValue = e => {
