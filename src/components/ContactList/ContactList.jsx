@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import css from './ContactList.module.css';
 
 const ContactList = props => {
-  const { contacts, filter } = props;
+  const { contacts, filter, onClickHandler } = props;
 
   return (
     <div className={css.contacts}>
@@ -16,7 +16,14 @@ const ContactList = props => {
           )
           .map(({ id, name, number }) => (
             <li className={css.contacts__item} key={id}>
-              {name} : {number}
+              {name} : {number} {' '}
+              <button
+                className={css.contacts__btn}
+                id={id}
+                onClick={onClickHandler}
+              >
+                Delete
+              </button>
             </li>
           ))}
       </ul>

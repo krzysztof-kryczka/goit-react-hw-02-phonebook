@@ -11,6 +11,20 @@
   margin: 0;
 }
 
-.contacts__item { 
+.contacts__btn {
+  width: 60px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 10px;
+  color: #000000;
+  cursor: pointer;
+  padding: 5px;
+  text-align: center;
+  transition: all 0.5s;
+  margin: 5px auto 5px;
+}
 
+.contacts__btn:hover {
+  background-color: #0080ff;
+  color: #fff;
 }
